@@ -28,6 +28,7 @@ class FanduelTableTennis(ArbTemplate):
             self.driver = webdriver.Chrome(executable_path)
         self.url = "https://sportsbook.fanduel.com/table-tennis"
         self.sport = "TableTennis"
+        self.book = "Fanduel"
 
     def get_data_snapshot(self):
         ul = self.driver.find_element(By.XPATH, '//*[@id="main"]/div/div[1]/div/div/div[2]/div[2]/ul')

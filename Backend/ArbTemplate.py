@@ -18,9 +18,9 @@ class ArbTemplate:
 
     def save(self):
         cwd = os.getcwd()
-        with open(cwd + f"/data/Fanduel/{self.sport}.json", 'w') as f:
-            json_obj = json.dumps(self.data, indent=4)
-            f.write(json_obj)
+        with open(cwd + f"/Data/{self.book}/{self.sport}.json", 'w') as f:
+            json_obj = json.dumps(self.data, ensure_ascii=False, indent=4).encode('utf-8')
+            f.write(json_obj.decode())
     
     def run(self, continuous=True):
         print(f"starting {self.sport} thread")
@@ -47,9 +47,13 @@ class ArbTemplate:
             time.sleep(10)
 
     def get_data(self, continuous=True):
-        self.start()
-        if continuous:
-            self.get_data_continuous()
-        else:
-            self.get_data_snapshot()
-        self.close()
+        try:
+            self.start()
+            if continuous:
+                self.get_data_continuous()
+            else:
+                self.get_data_snapshot()
+            self.close()
+        except Exception as e:
+            print(e)
+            self.data = {}
