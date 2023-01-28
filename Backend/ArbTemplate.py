@@ -18,10 +18,11 @@ class ArbTemplate:
 
     def save(self):
         cwd = os.getcwd()
-        with open(cwd + f"/Data/{self.book}/{self.sport}.json", 'w') as f:
+        with open(cwd + f"/Data/{self.book}/{self.sport}.json", 'w+') as f:
+            print(f, cwd)
             json_obj = json.dumps(self.data, ensure_ascii=False, indent=4).encode('utf-8')
             f.write(json_obj.decode())
-    
+        
     def run(self, continuous=True):
         print(f"starting {self.sport} thread")
         t1 = Thread(target=self.get_data, args=[continuous])

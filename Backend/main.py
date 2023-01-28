@@ -1,11 +1,12 @@
-from Fanduel.FanduelNFL import FanduelNFL
-from Fanduel.FanduelTableTennis import FanduelTableTennis
-from DraftKings.DraftKingsTableTennis import DraftKingsTableTennis
+from Backend.Fanduel.FanduelNFL import FanduelNFL
+from Backend.Fanduel.FanduelTableTennis import FanduelTableTennis
+from Backend.DraftKings.DraftKingsTableTennis import DraftKingsTableTennis
+from Backend.DraftKings.DraftKingsNFL import DraftKingsNFL
 
-executable_path = "/users/alecasie1/desktop/arb/chromedriver"
+executable_path = "/users/alecasie1/desktop/arbbets/chromedriver"
 
-items = [FanduelNFL, FanduelTableTennis, DraftKingsTableTennis]
-# items = [DraftKingsTableTennis]
+# items = [FanduelNFL, FanduelTableTennis, DraftKingsTableTennis, DraftKingsNFL]
+items = [DraftKingsNFL]
 
 if __name__ == "__main__":
     for item in items:
