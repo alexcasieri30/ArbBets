@@ -34,12 +34,11 @@ class DraftKingsTableTennis(ArbTemplate):
         els = self.driver.find_element(By.XPATH, '//*[@id="root"]/section/section[2]/section/div[3]/div/div[2]/div/div/div[2]/div/div[2]')
         divs = els.find_elements(By.XPATH, "*")
         for div in divs:
-            list_data = div.text.split("\n")
-            print(list_data)
-            player1 = list_data[3]
-            player2 = list_data[5]
-            player1odds = list_data[4]
-            player2odds = list_data[6]
+            list_data = div.find_element(By.CLASS_NAME, "outcomes").text.split("\n")
+            player1 = list_data[0]
+            player2 = list_data[2]
+            player1odds = list_data[1]
+            player2odds = list_data[3]
             ascii_bytes = (player1 + player2).encode('ascii')
             base64_bytes = base64.b64encode(ascii_bytes)
             new_id = base64_bytes.decode('ascii')
