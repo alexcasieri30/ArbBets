@@ -5,8 +5,8 @@ from Backend.DraftKings.DraftKingsNFL import DraftKingsNFL
 
 executable_path = "/users/alecasie1/desktop/arbbets/chromedriver"
 
-# items = [FanduelNFL, FanduelTableTennis, DraftKingsTableTennis, DraftKingsNFL]
-items = [DraftKingsNFL]
+items = [FanduelNFL, FanduelTableTennis, DraftKingsTableTennis, DraftKingsNFL]
+# items = [DraftKingsNFL]
 
 if __name__ == "__main__":
     for item in items:
