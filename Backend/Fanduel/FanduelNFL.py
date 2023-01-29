@@ -38,11 +38,11 @@ class FanduelNFL(ArbTemplate):
                 continue
             team1 = list_data[0]
             team2 = list_data[1]
-            team1data = list_data[2:7]
-            team2data = list_data[7:12]
+            team1moneyline = list_data[4]
+            team2moneyline = list_data[9]
             ascii_bytes = (team1 + team2).encode('ascii')
             base64_bytes = base64.b64encode(ascii_bytes)
             new_id = base64_bytes.decode('ascii')
             new_id = "FANDUEL-NFL-" + new_id[:12]
-            newentry = {team1:team1data, team2:team2data}
+            newentry = {team1:team1moneyline, team2:team2moneyline}
             self.data[new_id] = newentry

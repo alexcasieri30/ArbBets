@@ -37,36 +37,17 @@ class DraftKingsNFL(ArbTemplate):
         for i, row in enumerate(rows):
             rowdata = row.find_elements(By.TAG_NAME, "td")
             team = row.find_element(By.TAG_NAME, 'th').find_element(By.TAG_NAME, 'a').find_element(By.CLASS_NAME, 'event-cell').text
-            teamdata = []
-            try:
-                for k, col in enumerate(rowdata):
-                    if k == 1:
-                        d = col.text.split("\n")
-                        ou = d[0] + d[1]
-                        n = d[2]
-                        teamdata += [ou, n]
-                    else:
-                        teamdata += [*col.text.split("\n")]
-                event[team] = teamdata
-                event_name += team
-                print(event)
-            except Exception as e:
-                print(e)
+            teamdata = None
+            for k, col in enumerate(rowdata):
+                teamdata = col.text.split("\n")[-1]
+            event[team] = teamdata
+            event_name += team
+
             if i%2==1:
-                try:
-                    try:
-                        ascii_bytes = (event_name).encode('ascii')
-                        base64_bytes = base64.b64encode(ascii_bytes)
-                        new_id = base64_bytes.decode('ascii')
-                    except Exception as e:
-                        print(e)
-                    print("NEW ID: ", new_id)
-                    new_id = "DRAFTKINGS-NFL-" + new_id[:12]
-                    print(new_id, event)
-                    self.data[new_id] = event
-                    print("SELF.DATA: ", self.data)
-                    event = {}
-                    event_name = ""
-                except Exception as e:
-                    print("ERROR: ", e)
-        print(self.data)
+                ascii_bytes = (event_name).encode('ascii')
+                base64_bytes = base64.b64encode(ascii_bytes)
+                new_id = base64_bytes.decode('ascii')
+                new_id = "DRAFTKINGS-NFL-" + new_id[:12]
+                self.data[new_id] = event
+                event = {}
+                event_name = ""

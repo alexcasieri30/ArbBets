@@ -3,16 +3,24 @@
         "2": "3",
         "4": "5"
     },
-    "DRAFTKINGS-TABLETENNIS-U3p5bW9uIFJh": {
-        "Szymon Radlo": "−200",
-        "Kacper Makowski": "+145"
-    },
     "DRAFTKINGS-TABLETENNIS-TWFjaWVqIE1h": {
         "Maciej Makajew": "+125",
         "Lukasz Pietraszko": "−175"
     },
+    "DRAFTKINGS-TABLETENNIS-S2Fyb2wgV2lz": {
+        "Karol Wisniewski": "−340",
+        "Kacper Makowski": "+230"
+    },
     "DRAFTKINGS-TABLETENNIS-U2ViYXN0aWFu": {
         "Sebastian Baran": "+105",
         "Arkadiusz Mugowski": "−140"
+    },
+    "DRAFTKINGS-TABLETENNIS-U3p5bW9uIFJh": {
+        "Szymon Radlo": "−115",
+        "Mateusz Rutkowski": "−115"
+    },
+    "DRAFTKINGS-TABLETENNIS-MzU=": {
+        "3": "4",
+        "5": "Sebastian Baran"
     }
 }
