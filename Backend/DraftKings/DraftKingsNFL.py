@@ -44,10 +44,10 @@ class DraftKingsNFL(ArbTemplate):
             event_name += team
 
             if i%2==1:
-                ascii_bytes = (event_name).encode('ascii')
+                ascii_bytes = ''.join(set(event_name)).encode('ascii')
                 base64_bytes = base64.b64encode(ascii_bytes)
                 new_id = base64_bytes.decode('ascii')
-                new_id = "DRAFTKINGS-NFL-" + new_id[:12]
+                new_id = "DRAFTKINGS-NFL-" + new_id
                 self.data[new_id] = event
                 event = {}
                 event_name = ""

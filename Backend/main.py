@@ -6,7 +6,7 @@ from Backend.DraftKings.DraftKingsNFL import DraftKingsNFL
 executable_path = "/users/alecasie1/desktop/arbbets/chromedriver"
 
 items = [FanduelNFL, FanduelTableTennis, DraftKingsTableTennis, DraftKingsNFL]
-# items = [DraftKingsNFL]
+# items = [FanduelNFL]
 
 # removed pycache
 if __name__ == "__main__":

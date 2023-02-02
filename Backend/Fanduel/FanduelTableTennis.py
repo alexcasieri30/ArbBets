@@ -40,10 +40,10 @@ class FanduelTableTennis(ArbTemplate):
                 player1odds = list_data[2]
                 player2 = list_data[1]
                 player2odds = list_data[3]
-                ascii_bytes = (player1 + player2).encode('ascii')
+                ascii_bytes = ''.join(set(player1 + player2)).encode('ascii')
                 base64_bytes = base64.b64encode(ascii_bytes)
                 new_id = base64_bytes.decode('ascii')
-                new_id = "FANDUEL-TABLETENNIS-" + new_id[:12]
+                new_id = "FANDUEL-TABLETENNIS-" + new_id
                 newentry = {player1:player1odds, player2:player2odds}
                 self.data[new_id] = newentry
 

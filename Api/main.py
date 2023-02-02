@@ -23,6 +23,7 @@ while True:
         try:
             all_sport_data[sport].find_arbs()
         except Exception as e:
+            print("ERROR: ", e)
             continue
-    time.sleep(5)
+    time.sleep(10)
 
