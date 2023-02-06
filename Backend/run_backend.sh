@@ -1,0 +1,1 @@
+PYTHONPATH=/users/alecasie1/desktop/arbbets python3 main.py

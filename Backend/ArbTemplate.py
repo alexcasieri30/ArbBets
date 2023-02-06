@@ -39,12 +39,15 @@ class ArbTemplate:
 
     def get_data_continuous(self):
         while True:
-            print("-" * 50)
-            print('getting data...')
-            self.get_data_snapshot()
-            self.print_data()
-            self.save()
-            print("sleeping")
+            try:
+                print("-" * 50)
+                print('getting data...')
+                self.get_data_snapshot()
+                self.print_data()
+                self.save()
+                print("sleeping")
+            except Exception as e:
+                print("ERR: ", e, "TRYING AGAIN ...")
             time.sleep(10)
 
     def get_data(self, continuous=True):
